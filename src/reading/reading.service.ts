@@ -36,6 +36,15 @@ export class ReadingService {
           },
         },
         { $sample: { size: 1 } }, // Randomly select one document
+        {
+          $project: {
+            _id: 1,
+            Passage_id: 1,
+            title: 1,
+            passage: 1,
+            [`questions.${selected_option}`]: 1, // Include the selected_option field
+          },
+        },
       ])
       .exec();
 
