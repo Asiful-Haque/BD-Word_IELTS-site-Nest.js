@@ -18,7 +18,7 @@ export class ReadingService {
     return this.connection.model<Passage>(
       modelName, //this is actually the model name
       ReadingSchema, //schema name
-      collectionName, //this will make passages by default
+      collectionName, //overrides the default pluralization behavior, and Mongoose uses your exact collection name
     );
   }
 

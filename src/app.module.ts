@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ReadingModule } from './reading/reading.module';
+import { WritingModule } from './writing/writing.module';
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { ReadingModule } from './reading/reading.module';
       inject: [ConfigService],
     }),
     ReadingModule,
+    WritingModule,
   ],
   controllers: [],
   providers: [],
