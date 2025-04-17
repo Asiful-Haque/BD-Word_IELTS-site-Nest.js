@@ -10,4 +10,10 @@ export class WritingController {
     const result = await this.writingService.getWriting1Data();
     return { result };
   }
+
+  @Get('/writing/part2')
+  async getWriting2(): Promise<any> {
+    const result = await this.writingService.getWriting2Data();
+    return { result };
+  }
 }
